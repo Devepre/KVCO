@@ -24,7 +24,9 @@
         key = @"name";
     } else if ([textField isEqual:self.surnameText]) {
         key = @"surname";
-    } 
+    } else if ([textField isEqual:self.gradeText]) {
+        key = @"grade";
+    }
     
     [self.student setValue:textField.text forKey:key];
     NSLog(@"Student is: %@", self.student);
@@ -82,6 +84,13 @@
     }
     
     textField.text = [[change objectForKey:@"new"] description];
+    
+    NSLog(@"%@", self.student);
+}
+
+- (IBAction)genderActionControl:(UISegmentedControl *)sender {
+    [self.student setValue:[NSNumber numberWithInteger:sender.selectedSegmentIndex]
+                    forKey:@"gender"];
 }
 
 @end

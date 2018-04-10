@@ -150,6 +150,9 @@
                                                         <segment title="Female"/>
                                                         <segment title="Other"/>
                                                     </segments>
+                                                    <connections>
+                                                        <action selector="genderActionControl:" destination="xmZ-6K-FGs" eventType="valueChanged" id="HNN-DT-vYL"/>
+                                                    </connections>
                                                 </segmentedControl>
                                             </subviews>
                                         </tableViewCellContentView>

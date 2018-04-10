@@ -3,6 +3,8 @@
 
 @interface ViewController ()
 
+@property (strong, nonatomic) Student *student;
+
 @end
 
 @implementation ViewController
@@ -16,6 +18,16 @@
 #pragma mark UITextViewDelegate
 - (void)textFieldDidEndEditing:(UITextField *)textField reason:(UITextFieldDidEndEditingReason)reason {
     NSLog(@"text was changed to %@", textField.text);
+    
+    NSString *key = nil;
+    if ([textField isEqual:self.nameText]) {
+        key = @"name";
+    } else if ([textField isEqual:self.surnameText]) {
+        key = @"surname";
+    } 
+    
+    [self.student setValue:textField.text forKey:key];
+    NSLog(@"Student is: %@", self.student);
 }
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
@@ -25,14 +37,51 @@
 
 #pragma mark - Additional Methods
 - (void)initData {
-    Student *student = [[Student alloc] init];
-    student.gender = GenderFemale;
-    student.grade = 3;
+    self.student = [Student alloc];
     
-    self.nameText.text = [student valueForKey:@"name"];
-    self.surnameText.text = [student valueForKey:@"surname"];
-    self.gradeText.text = [[student valueForKey:@"grade"] description];
-    self.genderControl.selectedSegmentIndex = [[student valueForKey:@"gender"] integerValue];
+    [self.student addObserver:self
+                   forKeyPath:@"name"
+                      options:(NSKeyValueObservingOptionNew)
+                      context:nil];
+    
+    [self.student addObserver:self
+                   forKeyPath:@"surname"
+                      options:(NSKeyValueObservingOptionNew)
+                      context:nil];
+    
+    [self.student addObserver:self
+                   forKeyPath:@"gender"
+                      options:(NSKeyValueObservingOptionNew)
+                      context:nil];
+    
+    [self.student addObserver:self
+                   forKeyPath:@"grade"
+                      options:(NSKeyValueObservingOptionNew)
+                      context:nil];
+    
+    self.student = [self.student init];
+    self.student.gender = GenderFemale;
+    self.student.grade = 3;
+
+}
+
+- (void)observeValueForKeyPath:(NSString *)keyPath
+                      ofObject:(id)object
+                        change:(NSDictionary<NSKeyValueChangeKey,id> *)change
+                       context:(void *)context {
+
+    UITextField *textField = nil;
+    if ([keyPath isEqual:@"name"]) {
+        textField = self.nameText;
+    } else if ([keyPath isEqual:@"surname"]) {
+        textField = self.surnameText;
+    } else if ([keyPath isEqualToString:@"grade"]) {
+        textField = self.gradeText;
+    } else if ([keyPath isEqualToString:@"gender"]) {
+        self.genderControl.selectedSegmentIndex = [[change objectForKey:@"new"] integerValue];
+    }
+    
+    textField.text = [[change objectForKey:@"new"] description];
 }
 
 @end

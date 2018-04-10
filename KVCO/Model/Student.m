@@ -27,4 +27,8 @@
     return [NSString stringWithFormat:@"%@ %@", self.name, self.surname];
 }
 
+- (NSString *)description {
+    return [NSString stringWithFormat:@"%@ %@ %lu", self.name, self.surname, (unsigned long)self.gender];
+}
+
 @end

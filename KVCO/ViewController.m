@@ -37,6 +37,16 @@
     return YES;
 }
 
+#pragma mark - Actions
+- (IBAction)genderActionControl:(UISegmentedControl *)sender {
+    [self.student setValue:[NSNumber numberWithInteger:sender.selectedSegmentIndex]
+                    forKey:@"gender"];
+}
+- (IBAction)resetButton:(UIButton *)sender {
+    [self.student resetStudent];
+    NSLog(@"Reset");
+}
+
 #pragma mark - Additional Methods
 - (void)initData {
     self.student = [Student alloc];
@@ -86,11 +96,6 @@
     textField.text = [[change objectForKey:@"new"] description];
     
     NSLog(@"%@", self.student);
-}
-
-- (IBAction)genderActionControl:(UISegmentedControl *)sender {
-    [self.student setValue:[NSNumber numberWithInteger:sender.selectedSegmentIndex]
-                    forKey:@"gender"];
 }
 
 @end

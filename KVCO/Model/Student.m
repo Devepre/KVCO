@@ -27,6 +27,23 @@
     return [NSString stringWithFormat:@"%@ %@", self.name, self.surname];
 }
 
+- (void)resetStudent {
+    [self willChangeValueForKey:@"name"];
+    [self willChangeValueForKey:@"surname"];
+    [self willChangeValueForKey:@"gender"];
+    [self willChangeValueForKey:@"grade"];
+    
+    _name = @"ResetName";
+    _surname = @"ResetSurname";
+    _gender = GenderMale;
+    _grade = 5;
+    
+    [self didChangeValueForKey:@"name"];
+    [self didChangeValueForKey:@"surname"];
+    [self didChangeValueForKey:@"gender"];
+    [self didChangeValueForKey:@"grade"];
+}
+
 - (NSString *)description {
     return [NSString stringWithFormat:@"%@ %@ %lu %ld", self.name, self.surname, (unsigned long)self.gender, (long)self.grade];
 }

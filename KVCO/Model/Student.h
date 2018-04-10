@@ -16,5 +16,6 @@ typedef NS_ENUM(NSUInteger, Gender) {
 
 - (instancetype)initWithName:(NSString *)name andSurname:(NSString *)surname andBirthDate:(NSDate *)birthDate NS_DESIGNATED_INITIALIZER;
 - (NSString *)fullName;
+- (void)resetStudent;
 
 @end

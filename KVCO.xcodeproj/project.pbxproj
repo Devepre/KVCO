@@ -13,6 +13,9 @@
 		CE42CAAD207CC14600F5F0B9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE42CAAC207CC14600F5F0B9 /* Assets.xcassets */; };
 		CE42CAB0207CC14600F5F0B9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE42CAAE207CC14600F5F0B9 /* LaunchScreen.storyboard */; };
 		CE42CAB3207CC14600F5F0B9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CE42CAB2207CC14600F5F0B9 /* main.m */; };
+		CE42CABB207CC1BA00F5F0B9 /* Student.m in Sources */ = {isa = PBXBuildFile; fileRef = CE42CABA207CC1BA00F5F0B9 /* Student.m */; };
+		CE42CAC0207CC2D100F5F0B9 /* NSString+Random.m in Sources */ = {isa = PBXBuildFile; fileRef = CE42CABF207CC2D100F5F0B9 /* NSString+Random.m */; };
+		CE42CAC3207CC30000F5F0B9 /* NSString+Date.m in Sources */ = {isa = PBXBuildFile; fileRef = CE42CAC2207CC30000F5F0B9 /* NSString+Date.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +29,12 @@
 		CE42CAAF207CC14600F5F0B9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CE42CAB1207CC14600F5F0B9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CE42CAB2207CC14600F5F0B9 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		CE42CAB9207CC1BA00F5F0B9 /* Student.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Student.h; sourceTree = "<group>"; };
+		CE42CABA207CC1BA00F5F0B9 /* Student.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Student.m; sourceTree = "<group>"; };
+		CE42CABE207CC2D100F5F0B9 /* NSString+Random.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSString+Random.h"; sourceTree = "<group>"; };
+		CE42CABF207CC2D100F5F0B9 /* NSString+Random.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSString+Random.m"; sourceTree = "<group>"; };
+		CE42CAC1207CC30000F5F0B9 /* NSString+Date.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSString+Date.h"; sourceTree = "<group>"; };
+		CE42CAC2207CC30000F5F0B9 /* NSString+Date.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSString+Date.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,8 +68,10 @@
 			isa = PBXGroup;
 			children = (
 				CE42CAA3207CC14300F5F0B9 /* AppDelegate.h */,
+				CE42CABC207CC29400F5F0B9 /* Model */,
 				CE42CAA4207CC14300F5F0B9 /* AppDelegate.m */,
 				CE42CAA6207CC14300F5F0B9 /* ViewController.h */,
+				CE42CABD207CC2B700F5F0B9 /* Category */,
 				CE42CAA7207CC14300F5F0B9 /* ViewController.m */,
 				CE42CAA9207CC14300F5F0B9 /* Main.storyboard */,
 				CE42CAAC207CC14600F5F0B9 /* Assets.xcassets */,
@@ -69,6 +80,26 @@
 				CE42CAB2207CC14600F5F0B9 /* main.m */,
 			);
 			path = KVCO;
+			sourceTree = "<group>";
+		};
+		CE42CABC207CC29400F5F0B9 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				CE42CAB9207CC1BA00F5F0B9 /* Student.h */,
+				CE42CABA207CC1BA00F5F0B9 /* Student.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		CE42CABD207CC2B700F5F0B9 /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				CE42CAC1207CC30000F5F0B9 /* NSString+Date.h */,
+				CE42CAC2207CC30000F5F0B9 /* NSString+Date.m */,
+				CE42CABE207CC2D100F5F0B9 /* NSString+Random.h */,
+				CE42CABF207CC2D100F5F0B9 /* NSString+Random.m */,
+			);
+			path = Category;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -142,8 +173,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				CE42CAA8207CC14300F5F0B9 /* ViewController.m in Sources */,
+				CE42CAC3207CC30000F5F0B9 /* NSString+Date.m in Sources */,
 				CE42CAB3207CC14600F5F0B9 /* main.m in Sources */,
 				CE42CAA5207CC14300F5F0B9 /* AppDelegate.m in Sources */,
+				CE42CAC0207CC2D100F5F0B9 /* NSString+Random.m in Sources */,
+				CE42CABB207CC1BA00F5F0B9 /* Student.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
